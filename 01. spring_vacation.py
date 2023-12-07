@@ -1,3 +1,5 @@
+# 01.spring_vacation - 77/100 points
+
 days = int(input())
 budget = float(input())
 people = int(input())
