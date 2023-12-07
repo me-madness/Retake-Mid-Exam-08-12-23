@@ -1,7 +1,7 @@
 list_of_product = input().split("|")
 command = input()
 
-while command != "Shop":
+while command != "Shop!":
     command = input().split("%")
     
     if command[0] == "Important":
@@ -16,4 +16,13 @@ while command != "Shop":
         pass
     
     
-    
+# eggs|milk|bread|fish    
+# Important%bread
+# Swap%eggs%tomato
+# Shop!
+
+
+# apple|cheese|salt|bananas
+# Remove%cheese
+# Swap%salt%bananas
+# Shop!
