@@ -12,17 +12,23 @@ for i in range(len(white_gold)):
         sum -= 2
         if sum % 10 == 0:
             earrings += 1
-            if sum > 10:
+            if sum >= 10:
                 sum -= 2
                 if sum % 10 == 0:
                     earrings += 1
+                    if sum >= 10:
+                        sum -= 2
+                        if sum % 10 == 0:
+                            earrings += 1                 
+                    else:
+                        left_gold += sum                   
             else:
                 left_gold += sum
     else:
         earrings +=1            
                 
-if left_gold > 10:
-    left_sum = left_gold // 2
+if left_gold >= 10:
+    left_sum = left_gold // 10
     earrings += left_sum
     
 if earrings >= 7:       
@@ -31,8 +37,6 @@ else:
     new_sum = 7 - earrings
     print(f"Keep trying, you need {new_sum} more earrings.")
                                         
-print(white_gold)
-print(yellow_gold)
 
 # Input 1
 
