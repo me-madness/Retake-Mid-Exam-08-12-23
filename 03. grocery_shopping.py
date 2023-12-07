@@ -1,19 +1,41 @@
 list_of_product = input().split("|")
-command = input()
-
-while command != "Shop!":
-    command = input().split("%")
+command = input().split("%")
+new_list_of_products = []
+while command[0] != "Shop!":
     
     if command[0] == "Important":
-        pass
+        product = command[1]
+        if product not in list_of_product:
+            list_of_product.insert(0,product)
+        else:
+            list_of_product.remove(product)
+            list_of_product.insert(0,product)
+            print(list_of_product)    
     elif command[0] == "Add":
-        pass
+        if product not in list_of_product:
+            list_of_product.append(product)
+        else:
+            print("The product is already in the list.")
     elif command[0] == "Swap":
-        pass
+        product_one = command[1]
+        product_two = command[2]
+        if product_one not in list_of_product:
+            print(f"Product {product_one} missing!")
+        else:
+            if product_two not in list_of_product:
+                print(f"Product {product_two} missing!")
+            else:
+                pass    
     elif command[0] == "Remove":
-        pass
+        ex_product = command[1]
+        if ex_product not in list_of_product:
+            print(f"Product {ex_product} isn't in the list.")
+        else:    
+            list_of_product.remove(ex_product)
     elif command[0] == "Reversed":
-        pass
+        new_list_of_products.reverse(list_of_product)
+        list_of_product = new_list_of_products
+    command = input().split("%")
     
     
 # eggs|milk|bread|fish    
