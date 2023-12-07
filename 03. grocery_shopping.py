@@ -13,8 +13,9 @@ while command[0] != "Shop!":
             list_of_product.remove(product)
             list_of_product.insert(0,product)   
     elif command[0] == "Add":
-        if product not in list_of_product:
-            list_of_product.append(product)
+        add_product = command[1]
+        if add_product not in list_of_product:
+            list_of_product.append(add_product)
         else:
             print("The product is already in the list.")
     elif command[0] == "Swap":
@@ -37,7 +38,7 @@ while command[0] != "Shop!":
     elif command[0] == "Reversed":
         new_list_of_products.reverse(list_of_product)
         list_of_product = new_list_of_products
-
+    
     command = input().split("%")
     
 for product in list_of_product:
