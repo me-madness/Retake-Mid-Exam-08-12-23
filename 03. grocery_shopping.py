@@ -1,3 +1,5 @@
+# 03.grocery_shopping - 88/100 points
+
 list_of_product = input().split("|")
 command = input().split("%")
 new_list_of_products = []

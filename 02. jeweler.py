@@ -1,4 +1,4 @@
-#  02. jeweler - 87/100 points
+#  02.jeweler - 87/100 points
 
 white_gold = input().split(" ")
 yellow_gold = input().split(" ")
