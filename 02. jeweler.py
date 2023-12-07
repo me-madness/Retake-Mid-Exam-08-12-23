@@ -1,3 +1,5 @@
+#  02. jeweler - 87/100 points
+
 white_gold = input().split(" ")
 yellow_gold = input().split(" ")
 earrings = 0
@@ -6,26 +8,54 @@ for i in range(len(white_gold)):
     a = int(white_gold[i])
     b = int(yellow_gold[i])
     sum = a + b
-    if sum < 10:
+    if sum == 10:
+        earrings += 1
+    elif sum < 10:
         left_gold += sum
     elif sum > 10:
         sum -= 2
-        if sum % 10 == 0:
+        if sum == 10:
             earrings += 1
-            if sum >= 10:
-                sum -= 2
-                if sum % 10 == 0:
+        elif sum >= 10:
+            sum -= 2 
+            if sum == 10:
+                earrings += 1   
+            elif sum >= 10:
+                sum -= 2  
+                if sum == 10:
                     earrings += 1
-                    if sum >= 10:
+                elif sum >= 10:
+                    sum -= 2 
+                    if sum == 10:
+                        earrings += 1   
+                    elif sum >= 10:
                         sum -= 2
-                        if sum % 10 == 0:
-                            earrings += 1                 
+                        if sum == 10:
+                            earrings += 1
+                        elif sum >= 10:
+                            sum -= 2 
+                            if sum == 10:
+                                earrings += 1   
+                            elif sum >= 10:
+                                sum -= 2
+                                if sum == 10:
+                                    earrings += 1   
+                                elif sum >= 10:
+                                    sum -= 2 
+                                else:
+                                    left_gold += sum 
+                            else:
+                                left_gold += sum
+                        else:
+                            left_gold += sum        
                     else:
-                        left_gold += sum                   
+                        left_gold += sum                  
+                else:
+                    left_gold += sum                      
+                                    
             else:
                 left_gold += sum
-    else:
-        earrings +=1            
+                
                 
 if left_gold >= 10:
     left_sum = left_gold // 10
