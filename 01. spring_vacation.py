@@ -4,20 +4,35 @@ people = int(input())
 price_fuel_for_kilometer = float(input())
 food_expenses = float(input())
 room_price = float(input())
-food_and_accommodation = (days*people*room_price) + (days*food_expenses*people)
-print(food_and_accommodation)
+
+if people > 10:
+    discount = (days*people*room_price) * 0.25
+    food_and_accommodation = (days*people*room_price) + (days*food_expenses*people) - discount
+else:    
+    food_and_accommodation = (days*people*room_price) + (days*food_expenses*people)
 
 for day in range(days):
+    current_day = day + 1 
     distance = int(input())
     food_and_accommodation += distance * price_fuel_for_kilometer
-    if day % 3 == 0:
+    if current_day % 3 == 0:
         food_and_accommodation += food_and_accommodation * 0.4    
-    if day % 5 == 0:
+    if current_day % 5 == 0:
         food_and_accommodation += food_and_accommodation * 0.4    
-    if day % 7 == 0:
-        small_budget = food_and_accommodation / people     
+    if current_day % 7 == 0:
+        food_and_accommodation -= food_and_accommodation / people     
 
-    print(f"{food_and_accommodation:.2f}")
+
+if budget >= food_and_accommodation:
+    sum = budget - food_and_accommodation
+    print(f"You have reached the destination. You have {sum:.2f}$ budget left.") 
+else:
+    sum = food_and_accommodation - budget
+    print(f"Not enough money to continue the trip. You need {sum:.2f}$ more.")
+    
+    
+    
+    
 # Input 1
 
 # 7
