@@ -37,10 +37,11 @@ while command[0] != "Shop!":
     elif command[0] == "Reversed":
         new_list_of_products.reverse(list_of_product)
         list_of_product = new_list_of_products
+
     command = input().split("%")
     
 for product in list_of_product:
-    print(f"{count_product}.{product}") 
+    print(f"{count_product}. {product}") 
     count_product += 1   
     
     
